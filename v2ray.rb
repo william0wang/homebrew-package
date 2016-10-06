@@ -20,7 +20,7 @@ class V2ray < Formula
         <array>
             <string>#{bin}/v2ray</string>
             <string>-config</string>
-            <string>#{etc}/config.json</string>
+            <string>#{etc}/v2ray.json</string>
         </array>
         <key>WorkingDirectory</key>
         <string>#{HOMEBREW_PREFIX}</string>
@@ -31,8 +31,7 @@ class V2ray < Formula
 
 
   def install
-    # ENV.deparallelize  # if your formula fails when building in parallel
     bin.install "v2ray"
-    etc.install "config.json"
+    etc.install "config.json" => "v2ray.json"
   end
 end
